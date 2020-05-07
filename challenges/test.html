@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <meta http-equiv="X-UA-compatible" content="ie=edge">
+        
+        <title>Document</title>
+     </head>
+<body>
+
+<h2>Asynchronous JavaScript</h2>
+<!--The event loop
+execution stack,web APIs,msg queue,console
+-->
+<script>
+/*
+const sec = () => {
+    setTimeout(() => console.log("asynchronous js"),2000);
+}
+const first = () =>
+{
+    console.log("hey there!");
+    sec();
+    console.log("The END");
+}
+first();
+function getRec() {
+    setTimeout(() => {
+        const recId = [123,43,545,656,68];
+        console.log(recId);
+        setTimeout((id) => {
+        const recipe = {  title : 'sandwich',
+    chef : 'jonas'};
+    console.log(`${id} : ${recipe.title}`);
+
+    
+    },1000,recId[2]);
+    },1500);
+
+}
+getRec();
+
+const getId = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve([123, 43, 545, 656, 68]);
+        // reject("ERROR!");
+    }, 1500);
+});
+// then is used to handle the promise
+const getRec = recId => {
+   return new Promise((resolve, reject) => {
+        setTimeout((id) => {
+            const recipe = {  title : 'sandwich',
+    chef : 'jonas'};
+    resolve(`${id} : ${recipe.title}`);
+    },1500,recId);
+    });
+};
+
+const getRelated = chef => {
+    return new Promise((resolve, reject) => {
+        setTimeout(pub => {
+            const recipe = {  title : 'sandwich',
+    chef : 'jonas'};
+    resolve(`${pub} : ${recipe.title}`);
+    },1500,chef);
+    });
+}*/
+// getId
+// .then(ids => {
+//     console.log(ids);
+//     return getRec(ids[2])
+// }).then(recipe => {
+//     console.log(recipe);
+//     return getRelated('Rachna');
+// }).then (recipe => {
+//     console.log(recipe);
+// })
+// .catch(error => {
+//     console.log(error);
+// }); 
+
+
+// async function getREcipeAll() {
+//     const id = await getId;
+//     console.log(id);
+//     // await is used to consume the promise and can only be used in async function
+// const recipe = await getRec(id[1]);
+// console.log(recipe)
+// const re = await getRelated('jonas');
+// console.log(re);
+
+// return recipe;
+   
+// }
+// const r = getREcipeAll();
+// console.log(r);
+// getREcipeAll().then(result => console.log(`${result} is the best`));
+
+ 
+    fetch('https://crossorigin.me/https://www.metaweather.com/api/location/2487956/')
+    .then(result => {
+        console.log(result);
+        return result.json();
+    })
+    .then(data => console.log(data))
+    .catch(err => console.log(err));
+</script>
+</body>
+</html>
